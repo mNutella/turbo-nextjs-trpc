@@ -31,9 +31,9 @@ function getTRPCUrl() {
 
 const App = ({ Component, pageProps: { session, ...pageProps } }: AppProps) => (
   <PlausibleProvider domain={getBaseUrl()}>
-    <SessionProvider session={session}>
+    {/* <SessionProvider session={session}> */}
       <Component {...pageProps} />
-    </SessionProvider>
+    {/* </SessionProvider> */}
   </PlausibleProvider>
 );
 

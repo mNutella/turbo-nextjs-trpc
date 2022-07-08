@@ -8,18 +8,21 @@ const PostViewPage = () => {
   const postQuery = trpc.useQuery(["post.byId", { id }]);
 
   if (postQuery.error) {
-    return (
-      <NextError
-        title={postQuery.error.message}
-        statusCode={postQuery.error.data?.httpStatus ?? 500}
-      />
-    );
+    console.log(postQuery.error)
+    // return (
+    //   <NextError
+    //     title={postQuery.error.message}
+    //     statusCode={postQuery.error.data?.httpStatus ?? 500}
+    //   />
+    // );
   }
 
   if (postQuery.status !== "success") {
     return <>Loading...</>;
   }
+
   const { data } = postQuery;
+
   return (
     <>
       <h1>{data.title}</h1>

@@ -32,3 +32,7 @@ yarn-error.log*
 
 # turbo
 .turbo
+
+# prisma
+dev.db-journal
+*.db
