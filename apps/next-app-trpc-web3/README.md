@@ -1,0 +1,1 @@
+NextJS version is **^12.1.6-canary.3** because trpc has an [issue](https://github.com/trpc/trpc/issues/1789)

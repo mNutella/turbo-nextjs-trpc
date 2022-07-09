@@ -1,0 +1,5 @@
+export const DEFAULT_META_TITLE = 'Default title'
+export const DEFAULT_META_DESCRIPTION = 'Default description'
+export const DEFAULT_META_IMAGE = '/default-meta-img.png'
+export const DEFAULT_FAVICON = '/favicon.ico'
+export const DEFAULT_META_URL = '#'

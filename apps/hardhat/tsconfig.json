@@ -1,0 +1,10 @@
+{
+  "extends": "tsconfig/base.json",
+  "compilerOptions": {
+    "target": "es2020",
+    "module": "commonjs"
+  },
+  "include": ["./typechain-types", "./test", "./src", "./scripts"],
+  "exclude": ["node_modules"],
+  "files": ["./hardhat.config.ts"]
+}

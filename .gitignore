@@ -36,3 +36,13 @@ yarn-error.log*
 # prisma
 dev.db-journal
 *.db
+
+### Web 3
+coverage
+coverage.json
+typechain
+typechain-types
+
+# Hardhat files
+cache
+artifacts
