@@ -1,5 +1,5 @@
-import React from 'react'
+const Footer = () => (
+  <footer className="py-5 text-white bg-blue-600">Footer</footer>
+);
 
-export const Footer = () => (
-    <footer className='bg-blue-600 py-5 text-white'>Footer</footer>
-  )
+export default Footer;

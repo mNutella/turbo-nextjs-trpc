@@ -62,37 +62,26 @@ export type Props = {
  * XXX Core component, meant to be used by other layouts, shouldn't be used by other components directly.
  *
  */
-const CoreHead: React.FC<Props> = (props): JSX.Element => {
-  const { additionalContent = null } = props;
-  let { metaTitle, metaDescription, metaUrl, favicon, metaImage } = props;
-  metaTitle = metaTitle || DEFAULT_META_TITLE;
-  metaDescription = metaDescription || DEFAULT_META_DESCRIPTION;
-  // eslint-disable-next-line
-  metaUrl = metaUrl || DEFAULT_META_URL;
-  favicon = favicon || DEFAULT_FAVICON;
-  // eslint-disable-next-line
-  metaImage = metaImage || DEFAULT_META_IMAGE;
-
+const CoreHead: React.FC<Props> = ({
+  additionalContent,
+  metaTitle = DEFAULT_META_TITLE,
+  metaDescription = DEFAULT_META_DESCRIPTION,
+  metaUrl = DEFAULT_META_URL,
+  favicon = DEFAULT_FAVICON,
+  metaImage = DEFAULT_META_IMAGE,
+}): JSX.Element => {
   return (
     <NextHead>
       <meta charSet="UTF-8" />
       <title>{metaTitle}</title>
-      <meta name="description" content={metaDescription} />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <link rel="icon" href={favicon} />
 
-      <NextSeo title={metaTitle} description={metaDescription} />
-
-      {/* 
-      <meta property="og:url" content={metaUrl} />
-      <meta property="og:title" content={metaTitle} />
-      <meta property="og:description" content={metaDescription} />
-      <meta name="twitter:site" content={metaUrl} />
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:image" content={metaImage} />
-      <meta property="og:image" content={metaImage} />
-      <meta property="og:image:width" content="1200" />
-      <meta property="og:image:height" content="630" /> */}
+      <NextSeo
+        title={metaTitle}
+        description={metaDescription}
+        canonical={metaUrl}
+      />
 
       {additionalContent && additionalContent}
     </NextHead>

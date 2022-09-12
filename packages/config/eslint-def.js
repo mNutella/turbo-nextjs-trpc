@@ -24,7 +24,7 @@ module.exports = {
   },
   rules: {
     "import/prefer-default-export": "off",
-    "import/no-extraneous-dependencies": ["error", {"devDependencies": true, "optionalDependencies": false, "peerDependencies": false}],
+    "import/no-extraneous-dependencies": ["error", {"devDependencies": false, "optionalDependencies": false, "peerDependencies": false}],
 
     "@typescript-eslint/naming-convention": [
       "error",
