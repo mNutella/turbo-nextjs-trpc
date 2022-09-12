@@ -13,6 +13,11 @@ type NextConfigType = {
   publicRuntimeConfig: {
     NODE_ENV: string;
   };
+  experimental: {
+    legacyBrowsers: boolean;
+    browsersListForSwc: boolean;
+    images: { allowFutureImage: boolean };
+  };
 };
 
 const currentConfig = config as NextConfigType;
