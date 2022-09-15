@@ -31,10 +31,7 @@ const { chains, provider, webSocketProvider } = configureChains(
       ? [chain.goerli, chain.kovan, chain.rinkeby, chain.ropsten]
       : []),
   ],
-  [
-    alchemyProvider({ alchemyId: "_gg7wSSi0KMBsdKnGVfHDueq6xMB9EkC" }),
-    publicProvider(),
-  ]
+  [alchemyProvider({ alchemyId: process.env.ALCHEMY_ID }), publicProvider()]
 );
 
 const { wallets } = getDefaultWallets({
@@ -85,13 +82,13 @@ function getTRPCUrl() {
 
 const App = ({ Component, pageProps: { session, ...pageProps } }: AppProps) => (
   <PlausibleProvider domain={getBaseUrl()}>
-    {/* <SessionProvider session={session}> */}
-    <WagmiConfig client={wagmiClient}>
-      <RainbowKitProvider appInfo={demoAppInfo} chains={chains}>
-        <Component {...pageProps} />
-      </RainbowKitProvider>
-    </WagmiConfig>
-    {/* </SessionProvider> */}
+    <SessionProvider session={session}>
+      <WagmiConfig client={wagmiClient}>
+        <RainbowKitProvider appInfo={demoAppInfo} chains={chains}>
+          <Component {...pageProps} />
+        </RainbowKitProvider>
+      </WagmiConfig>
+    </SessionProvider>
   </PlausibleProvider>
 );
 
